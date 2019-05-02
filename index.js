@@ -1,0 +1,1 @@
+module.exports.BITalinoRIOT = require('./bitalino-riot');

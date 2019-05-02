@@ -1,0 +1,26 @@
+{
+  "name": "r-iot",
+  "version": "1.0.0",
+  "description": "A support library for R-IoT and variants.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "osc": "^2.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joao-luna-98/r-iot.git"
+  },
+  "keywords": [
+    "R-IoT",
+    "BITalino"
+  ],
+  "author": "Joao Luna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joao-luna-98/r-iot/issues"
+  },
+  "homepage": "https://github.com/joao-luna-98/r-iot#readme"
+}
