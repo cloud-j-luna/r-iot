@@ -1,1 +1,1 @@
-module.exports.BITalinoRIOT = require('./bitalino-riot');
+module.exports.RIOT = require('./riot');

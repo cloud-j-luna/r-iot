@@ -5,18 +5,37 @@ const ErrorCode = {
     INVALID_PACKET: 'Invalid packet received: '
 };
 
-module.exports = class BITalinoRIOT extends EventEmitter {
-    constructor() {
+module.exports = class RIOT extends EventEmitter {
+    constructor(port) {
         super();
         this.udpPort = new osc.UDPPort({
             localAddress: "0.0.0.0",
-            localPort: 8888,
+            localPort: port,
             metadata: true
         });
         
         this.udpPort.on('message', (packet) => {
             if(/^\/[0-9]*\/bitalino/.test(packet.address)) {
-        
+                const bitalino = {
+                    sequence: packet.args[0],
+                    digital: [
+                        packet.args[1],
+                        packet.args[2],
+                        packet.args[3],
+                        packet.args[4],
+                    ],
+                    analog: [
+                        packet.args[5],
+                        packet.args[6],
+                        packet.args[7],
+                        packet.args[8],
+                        packet.args[9],
+                        packet.args[10],
+                    ]
+                }
+
+                this.emit('bitalino', bitalino);
+
             } else if(/^\/[0-9]*\/raw/.test(packet.address)) {
                 const raw = {
                     acX: packet.args[0],
