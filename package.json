@@ -1,5 +1,5 @@
 {
-  "name": "r-iot",
+  "name": "riot-world",
   "version": "1.1.2",
   "description": "A support library for R-IoT and variants.",
   "main": "index.js",
